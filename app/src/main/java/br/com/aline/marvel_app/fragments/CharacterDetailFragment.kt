@@ -7,14 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.aline.marvel_app.R
 
-class CharactersListFragment : Fragment() {
+class CharacterDetailFragment : Fragment() {
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_characters_list, container, false)
+        return inflater.inflate(R.layout.fragment_character_detail, container, false)
     }
 
 }

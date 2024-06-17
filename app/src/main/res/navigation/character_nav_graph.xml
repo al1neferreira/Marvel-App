@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/character_nav_graph"
+    app:startDestination="@id/searchCharacterFragment">
+
+    <fragment
+        android:id="@+id/searchCharacterFragment"
+        android:name="br.com.aline.marvel_app.fragments.SearchCharacterFragment"
+        android:label="SearchCharacterFragment" >
+        <action
+            android:id="@+id/action_searchCharacterFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="br.com.aline.marvel_app.fragments.CharacterDetailFragment"
+        android:label="CharacterDetailFragment" />
+    <fragment
+        android:id="@+id/charactersListFragment"
+        android:name="br.com.aline.marvel_app.fragments.CharactersListFragment"
+        android:label="CharactersListFragment" >
+        <action
+            android:id="@+id/action_charactersListFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesCharactersFragment"
+        android:name="br.com.aline.marvel_app.fragments.FavouritesCharactersFragment"
+        android:label="FavouritesCharactersFragment" >
+        <action
+            android:id="@+id/action_favouritesCharactersFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+</navigation>
