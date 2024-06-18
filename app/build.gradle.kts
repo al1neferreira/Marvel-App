@@ -4,6 +4,13 @@ plugins {
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
+
+
+
+
 }
 
 android {
@@ -86,4 +93,12 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     ksp ("com.github.bumptech.glide:compiler:4.12.0")
 
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-android-compiler:2.51")
+
 }
+kapt {
+    correctErrorTypes = true
+}
+
