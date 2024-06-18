@@ -36,6 +36,10 @@
             android:name="apiKey"
             android:value="${apiKey}" />
 
+        <meta-data
+            android:name="privateKey"
+            android:value="${privateKey}" />
+
     </application>
 
 </manifest>
