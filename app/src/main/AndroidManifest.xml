@@ -16,10 +16,10 @@
         android:theme="@style/Theme.MarvelApp"
         tools:targetApi="31">
         <activity
-            android:name=".CharacterActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CharacterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +31,11 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="apiKey"
+            android:value="${apiKey}" />
+
     </application>
 
 </manifest>

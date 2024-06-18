@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_charachter3" />
 
     <item android:id="@+id/favouritesFragment"
-        android:title="Favouritos"
+        android:title="Favoritos"
         android:icon="@drawable/ic_fav"/>
 
     <item android:id="@+id/searchFragment"
