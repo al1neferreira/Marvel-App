@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -37,6 +38,8 @@ android {
     }
     buildFeatures{
         viewBinding = true
+        buildConfig = true
+
     }
 
 }
@@ -82,7 +85,5 @@ dependencies {
     // Glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     ksp ("com.github.bumptech.glide:compiler:4.12.0")
-
-
 
 }
