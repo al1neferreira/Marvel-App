@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.aline.marvel_app.R
 import br.com.aline.marvel_app.domain.model.Character
@@ -28,7 +27,7 @@ class CharacterListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterListViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_character_new, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_character, parent, false)
         return CharacterListViewHolder(view)
     }
 
