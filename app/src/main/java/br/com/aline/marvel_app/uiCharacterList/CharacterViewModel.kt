@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class CharactersViewModel @Inject constructor(
+class CharacterViewModel @Inject constructor(
     private val charactersUseCase: CharacterUseCase
 ) : ViewModel() {
 
