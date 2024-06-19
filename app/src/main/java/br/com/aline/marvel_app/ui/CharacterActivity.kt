@@ -1,18 +1,26 @@
-package br.com.aline.marvel_app
+package br.com.aline.marvel_app.ui
 
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import br.com.aline.marvel_app.R
+import br.com.aline.marvel_app.databinding.ActivityCharacterBinding
+import br.com.aline.marvel_app.uiCharacterList.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CharacterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityCharacterBinding
+
+    private val viewModel: CharactersViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_character)
+        binding = ActivityCharacterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         window.statusBarColor = ContextCompat.getColor(this, R.color.red1)
     }
 }

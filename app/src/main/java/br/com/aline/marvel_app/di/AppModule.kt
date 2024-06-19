@@ -1,6 +1,6 @@
 package br.com.aline.marvel_app.di
 
-import br.com.aline.marvel_app.data.data_source.MarvelApi
+import br.com.aline.marvel_app.api.MarvelApi
 import br.com.aline.marvel_app.data.data_source.repository.MarvelRepositoryImpl
 import br.com.aline.marvel_app.domain.repository.MarvelRepository
 import br.com.aline.marvel_app.util.Constants
@@ -19,7 +19,7 @@ object AppModule {
     @Provides
     @Singleton
 
-    fun provideMarvelApi():MarvelApi{
+    fun provideMarvelApi(): MarvelApi {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black1"
+    android:background="@color/yellow2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
@@ -12,6 +12,7 @@
         android:layout_width="160dp"
         android:layout_height="90dp"
         android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +25,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="Nome:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
@@ -39,7 +40,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="DESCRIÇÃO"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/characterImage"
         app:layout_constraintTop_toBottomOf="@+id/charachterTitle" />
