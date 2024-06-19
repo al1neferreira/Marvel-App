@@ -7,7 +7,7 @@
     android:background="@color/black1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CharacterActivity">
+    tools:context=".ui.CharacterActivity">
 
     <FrameLayout
         android:id="@+id/flFragment"

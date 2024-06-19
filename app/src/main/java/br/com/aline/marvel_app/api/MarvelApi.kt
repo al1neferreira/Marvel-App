@@ -1,4 +1,4 @@
-package br.com.aline.marvel_app.data.data_source
+package br.com.aline.marvel_app.api
 
 import br.com.aline.marvel_app.data.data_source.dto.CharactersDto
 import br.com.aline.marvel_app.util.Constants

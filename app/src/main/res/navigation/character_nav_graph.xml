@@ -12,6 +12,7 @@
             android:id="@+id/action_searchCharacterFragment_to_characterDetailFragment"
             app:destination="@id/characterDetailFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/characterDetailFragment"
         android:name="br.com.aline.marvel_app.fragments.CharacterDetailFragment"
