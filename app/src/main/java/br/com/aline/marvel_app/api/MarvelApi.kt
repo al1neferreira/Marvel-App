@@ -14,4 +14,10 @@ interface MarvelApi {
         @Query("offset")offset:String
     ):CharactersDto
 
+    @GET("/v1/public/characters")
+    suspend fun searchCharacters(
+       @Query("name")name: String,
+       @Query("nameStartsWith") nameStartsWith: String
+    ): CharactersDto
+
 }
