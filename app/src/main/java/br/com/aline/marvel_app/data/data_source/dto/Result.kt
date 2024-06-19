@@ -21,10 +21,7 @@ data class Result(
             name = name,
             description = description,
             thumbnail = thumbnail.path,
-            thumbnailExt = thumbnail.path,
-            comics = comics.items.map {
-                it.name
-            }
+            thumbnailExt = thumbnail.path
         )
 
     }
