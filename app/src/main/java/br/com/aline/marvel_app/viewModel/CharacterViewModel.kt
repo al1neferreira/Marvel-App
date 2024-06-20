@@ -1,8 +1,10 @@
-package br.com.aline.marvel_app.uiCharacterList
+package br.com.aline.marvel_app.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.aline.marvel_app.domain.use_cases.CharacterUseCase
+import br.com.aline.marvel_app.domain.use_cases.SearchCharacterUseCase
+import br.com.aline.marvel_app.uiCharacterList.MarvelListState
 import br.com.aline.marvel_app.util.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CharacterViewModel @Inject constructor(
-    private val charactersUseCase: CharacterUseCase
+    private val charactersUseCase: CharacterUseCase,
+    private val searchCharacterUseCase: SearchCharacterUseCase
 ) : ViewModel() {
 
     private val marvelValue = MutableStateFlow(MarvelListState())
@@ -38,4 +41,25 @@ class CharacterViewModel @Inject constructor(
             }
         }
     }
+
+    fun getSearchedCharacters(nameStartsWith: String) =
+        viewModelScope.launch(Dispatchers.IO) {
+            searchCharacterUseCase.invoke(nameStartsWith = nameStartsWith).collect() {
+                when (it) {
+                    is Response.Success -> {
+                        marvelValue.value = MarvelListState(characterList = it.data ?: emptyList())
+                    }
+
+                    is Response.Loading -> {
+                        marvelValue.value = MarvelListState(isLoading = true)
+                    }
+
+                    is Response.Error -> {
+                        marvelValue.value =
+                            MarvelListState(error = it.message ?: "Erro ao carregar os dados")
+                    }
+                }
+            }
+        }
+
 }
