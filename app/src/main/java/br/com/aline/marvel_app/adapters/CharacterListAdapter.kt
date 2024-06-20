@@ -36,7 +36,7 @@ class CharacterListAdapter(
         val list = itemList[position]
         holder.characterName.text = list.name
         holder.characterDesc.text = list.description
-        val imageUrl = "${list.thumbnail}/portrait_xlarge.${list.thumbnailExt}"
+        val imageUrl = "${list.thumbnail.replace("http", "https")}/portrait_xlarge.${list.thumbnailExt}"
         Glide.with(context).load(imageUrl).into(holder.thumbnail)
         holder.cardCharacter.setOnClickListener{
             Toast.makeText(context, "Visualizar", Toast.LENGTH_LONG).show()

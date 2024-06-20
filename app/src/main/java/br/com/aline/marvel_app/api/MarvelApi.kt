@@ -8,16 +8,17 @@ import retrofit2.http.Query
 interface MarvelApi {
     @GET("/v1/public/characters")
     suspend fun getAllCharacters(
-        @Query("apikey")apiKey: String = Constants.API_KEY,
-        @Query("ts")ts:String = Constants.timStamp,
-        @Query("hash")hash:String = Constants.hash(),
-        @Query("offset")offset:String
-    ):CharactersDto
-
-    @GET("/v1/public/characters")
-    suspend fun searchCharacters(
-       @Query("name")name: String,
-       @Query("nameStartsWith") nameStartsWith: String
+        @Query("apikey") apiKey: String = Constants.API_KEY,
+        @Query("ts") ts: String = Constants.timStamp,
+        @Query("hash") hash: String = Constants.hash(),
+        @Query("offset") offset: String
     ): CharactersDto
 
+    @GET("/v1/public/characters")
+    suspend fun getAllSearchCharacters(
+        @Query("apikey") apiKey: String = Constants.API_KEY,
+        @Query("ts") ts: String = Constants.timStamp,
+        @Query("hash") hash: String = Constants.hash(),
+        @Query("nameStartsWith") nameStartsWith: String
+    ): CharactersDto
 }
