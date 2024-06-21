@@ -1,7 +1,6 @@
 package br.com.aline.marvel_app.ui.details
 
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Binding
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
