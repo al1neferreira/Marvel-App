@@ -4,15 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black1"
-    android:paddingTop="65dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pesquisar."
+        android:text="Personagens."
         android:textSize="30sp"
         android:fontFamily="@font/bangers"
         android:textColor="@color/yellow2"
@@ -22,45 +20,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-   <EditText
-    android:id="@+id/searchEdit"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Search news..."
-    android:layout_marginTop="70dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginStart="8dp"
-    android:padding="8dp"
-    android:textSize="14sp"
-    android:fontFamily="@font/bangers"
-    android:drawableTint="@color/yellow2"
-    android:background="@drawable/search_border"
-    android:drawableEnd="@drawable/ic_search"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSearchCharacter"
+        android:id="@+id/rvCharacters"
+        android:layout_marginTop="70dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:paddingVertical="12dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchEdit"
-        tools:listitem="@layout/item_character"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_character" />
+
+    <include
+        android:id="@+id/itemCharactersError"
+        layout="@layout/item_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ProgressBar
-        android:id="@+id/progressbarSearch"
+        android:id="@+id/progressCircular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminateTint="@color/red2"
         android:visibility="gone"
+        android:indeterminateTint="@color/red2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

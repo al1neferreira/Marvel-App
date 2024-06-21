@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listCharacterFragment">
+
+    <fragment
+        android:id="@+id/detailsCharacterFragment"
+        tools:layout="@layout/fragment_details_character"
+        android:name="br.com.aline.marvel_app.ui.details.DetailsCharacterFragment"
+        android:label="DetailsCharacterFragment" />
+    <fragment
+        android:id="@+id/favoriteCharacterFragment"
+        tools:layout="@layout/fragment_favorite_character"
+        android:name="br.com.aline.marvel_app.ui.favorite.FavoriteCharacterFragment"
+        android:label="FavoriteCharacterFragment" >
+        <action
+            android:id="@+id/action_favoriteCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+        <argument
+            android:name="characterId"
+            app:argType="br.com.aline.marvel_app.data.model.character.CharacterModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/listCharacterFragment"
+        tools:layout="@layout/fragment_list_character"
+        android:name="br.com.aline.marvel_app.ui.List.ListCharacterFragment"
+        android:label="ListCharacterFragment" >
+        <action
+            android:id="@+id/action_listCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchCharacterFragment"
+        tools:layout="@layout/fragment_search_character"
+        android:name="br.com.aline.marvel_app.ui.search.SearchCharacterFragment"
+        android:label="SearchCharacterFragment" >
+        <action
+            android:id="@+id/action_searchCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+</navigation>
