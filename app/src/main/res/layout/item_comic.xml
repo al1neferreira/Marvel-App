@@ -8,50 +8,52 @@
     app:cardCornerRadius="5dp"
     app:cardMaxElevation="2dp"
     android:backgroundTint="@color/yellow2"
-    app:strokeColor="@color/black"
+    app:strokeColor="@color/white"
     app:strokeWidth="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-
         <ImageView
-            android:id="@+id/imgCharacter"
+            android:id="@+id/imgComic"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="4dp"
-            android:contentDescription="@string/app_name"
             android:scaleType="centerCrop"
+            android:layout_height="200dp"
+            android:contentDescription="@string/app_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvNameCharacter"
+            android:id="@+id/tvNameComic"
             android:fontFamily="@font/bangers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/tx_item_name"
+            android:text="Personagem"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="@+id/imgCharacter"
-            app:layout_constraintTop_toBottomOf="@+id/imgCharacter" />
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgComic" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvDescriptionCharacter"
-            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:id="@+id/tvDescriptionComic"
+            android:fontFamily="@font/bangers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/tv_item_description"
+            android:text="Descrição"
             android:textAlignment="inherit"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/tvNameCharacter"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameCharacter" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNameComic"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameComic" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

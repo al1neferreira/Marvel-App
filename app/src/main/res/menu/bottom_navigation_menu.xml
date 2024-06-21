@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/headlinesFragment"
+    <item android:id="@+id/listCharacterFragment"
         android:title="Personagens"
         android:icon="@drawable/ic_charachter3" />
 
-    <item android:id="@+id/favouritesFragment"
+    <item android:id="@+id/favoriteCharacterFragment"
         android:title="Favoritos"
         android:icon="@drawable/ic_fav"/>
 
-    <item android:id="@+id/searchFragment"
+    <item android:id="@+id/searchCharacterFragment"
         android:title="Pesquisar"
         android:icon="@drawable/ic_search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
