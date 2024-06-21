@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/listCharacterFragment"
         tools:layout="@layout/fragment_list_character"
-        android:name="br.com.aline.marvel_app.ui.List.ListCharacterFragment"
+        android:name="br.com.aline.marvel_app.ui.list.ListCharacterFragment"
         android:label="ListCharacterFragment" >
         <action
             android:id="@+id/action_listCharacterFragment_to_detailsCharacterFragment"
