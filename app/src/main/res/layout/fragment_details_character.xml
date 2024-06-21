@@ -13,6 +13,7 @@
         android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="85dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -47,6 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/white"
                 android:text="@string/tv_item_description"
@@ -60,7 +62,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="45dp"
                 android:text="@string/comics"
                 android:textColor="@color/yellow2"
                 android:textAlignment="inherit"
@@ -74,8 +76,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:layout_marginTop="8dp"
                 android:scrollbars="vertical"
+                app:layout_constraintBottom_toTopOf="@id/rvComics"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -93,6 +95,19 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fav"
+                app:fabSize="auto"
+                android:backgroundTint="@color/red2"
+                android:layout_marginBottom="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

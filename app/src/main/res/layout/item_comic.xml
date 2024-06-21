@@ -15,11 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
+
         <ImageView
             android:id="@+id/imgComic"
             android:layout_width="0dp"
             android:scaleType="centerCrop"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:contentDescription="@string/app_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:text="Personagem"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -44,7 +45,7 @@
             android:fontFamily="@font/bangers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:text="Descrição"
             android:textAlignment="inherit"
             android:textSize="20sp"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Marvel-App</string>
+    <string name="app_name">Universo Marvel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -10,7 +10,7 @@
     <string name="tx_item_name">Nome:</string>
     <string name="tv_item_description">O sucesso nasce do querer, da determinação e persistência em se chegar a um objetivo.</string>
     <string name="text_description_empty">Esse personagem não possui descrição.</string>
-    <string name="comics">Comics</string>
+    <string name="comics">Detalhes do Personagem</string>
 
     <!--    Details Character Fragment -->
     <string name="empty_list_comics">Esse personagem não possui comics</string>
