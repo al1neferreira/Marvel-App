@@ -33,8 +33,10 @@ object Module {
                     .newBuilder()
                     .addQueryParameter(Constants.TS, currentTimestamp.toString())
                     .addQueryParameter(Constants.APIKEY, Constants.PUBLIC_KEY)
-                    .addQueryParameter(Constants.HASH,
-                       provideToMd5Hash(currentTimestamp.toString() + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY))
+                    .addQueryParameter(
+                        Constants.HASH,
+                        provideToMd5Hash(currentTimestamp.toString() + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY)
+                    )
                     .build()
 
                 val newRequest = chain.request()
@@ -67,6 +69,7 @@ object Module {
         Timber.d("hash -> $encryptedString")
         return encryptedString ?: ""
     }
+
 
     @Singleton
     @Provides
