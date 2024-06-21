@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import br.com.aline.marvel_app.databinding.FragmentSearchCharacterBinding
 import br.com.aline.marvel_app.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchCharacterFragment:
     BaseFragment<FragmentSearchCharacterBinding, SearchCharacterViewModel>() {
 
