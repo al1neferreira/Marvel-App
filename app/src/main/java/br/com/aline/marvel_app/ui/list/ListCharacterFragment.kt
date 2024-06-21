@@ -63,7 +63,7 @@ class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCha
     private fun clickAdapter() {
         characterAdapter.setOnClickListener { characterModel ->
             val action = ListCharacterFragmentDirections
-                .actionListCharacterFragmentToDetailsCharacterFragment()
+                .actionListCharacterFragmentToDetailsCharacterFragment(characterModel)
             findNavController().navigate(action)
         }
     }
