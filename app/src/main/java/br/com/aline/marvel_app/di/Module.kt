@@ -1,12 +1,17 @@
 package br.com.aline.marvel_app.di
 
+import android.content.Context
+import androidx.room.Room
 import br.com.aline.marvel_app.BuildConfig
+import br.com.aline.marvel_app.data.local.MarvelDatabase
 import br.com.aline.marvel_app.data.remote.ServiceApi
 import br.com.aline.marvel_app.util.Constants
 import br.com.aline.marvel_app.util.Constants.BASE_URL
+import br.com.aline.marvel_app.util.Constants.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,6 +26,21 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object Module {
+
+    @Singleton
+    @Provides
+    fun provideMarvelDatabase(
+        @ApplicationContext context: Context
+    ) = Room.databaseBuilder(
+        context,
+        MarvelDatabase::class.java,
+        DATABASE_NAME
+    ).build()
+
+    @Singleton
+    @Provides
+    fun provideMarvelDao(database: MarvelDatabase) = database.marvelDao()
+
 
     @Singleton
     @Provides
@@ -39,7 +59,8 @@ object Module {
                         provideToMd5Hash(
                             currentTimestamp.toString()
                                     + BuildConfig.privateKey
-                                    + BuildConfig.publicKey)
+                                    + BuildConfig.publicKey
+                        )
                     )
                     .build()
 
@@ -90,6 +111,5 @@ object Module {
     fun provideServiceApi(retrofit: Retrofit): ServiceApi {
         return retrofit.create(ServiceApi::class.java)
     }
-
 
 }
