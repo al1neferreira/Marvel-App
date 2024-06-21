@@ -1,5 +1,6 @@
 package br.com.aline.marvel_app.di
 
+import br.com.aline.marvel_app.BuildConfig
 import br.com.aline.marvel_app.data.remote.ServiceApi
 import br.com.aline.marvel_app.util.Constants
 import br.com.aline.marvel_app.util.Constants.BASE_URL
@@ -32,10 +33,13 @@ object Module {
                 val newUrl = chain.request().url
                     .newBuilder()
                     .addQueryParameter(Constants.TS, currentTimestamp.toString())
-                    .addQueryParameter(Constants.APIKEY, Constants.PUBLIC_KEY)
+                    .addQueryParameter(Constants.APIKEY, BuildConfig.publicKey)
                     .addQueryParameter(
                         Constants.HASH,
-                        provideToMd5Hash(currentTimestamp.toString() + Constants.PRIVATE_KEY + Constants.PUBLIC_KEY)
+                        provideToMd5Hash(
+                            currentTimestamp.toString()
+                                    + BuildConfig.privateKey
+                                    + BuildConfig.publicKey)
                     )
                     .build()
 
