@@ -24,8 +24,8 @@ object Module {
     @Singleton
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
-        val loggin = HttpLoggingInterceptor()
-        loggin.level = HttpLoggingInterceptor.Level.BODY
+        val logging = HttpLoggingInterceptor()
+        logging.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient().newBuilder()
             .addInterceptor { chain ->
                 val currentTimestamp = System.currentTimeMillis()
@@ -43,7 +43,7 @@ object Module {
                     .build()
                 chain.proceed(newRequest)
             }
-            .addInterceptor(loggin)
+            .addInterceptor(logging)
             .build()
     }
 
