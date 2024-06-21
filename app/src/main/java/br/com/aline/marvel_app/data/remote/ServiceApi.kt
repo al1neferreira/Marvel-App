@@ -13,7 +13,7 @@ interface ServiceApi {
         @Query("nameStartsWith") nameStartsWith: String? = null,
     ): Response<CharacterModelResponse>
 
-    @GET("characters/{characterId}/comics")
+    @GET("characters/{characterId}")
     suspend fun getComics(
         @Path(
             value = "characterId",
