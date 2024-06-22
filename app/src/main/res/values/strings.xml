@@ -27,7 +27,7 @@
 
     <!--    Favorite Character Fragment -->
     <string name="message_delete_character">Deletado com sucesso!</string>
-    <string name="tv_empty_text">Nada aqui.</string>
+    <string name="tv_empty_text">Nenhum personagem salvo</string>
 
     <!--    Menu details -->
     <string name="favorite">Favoritar</string>

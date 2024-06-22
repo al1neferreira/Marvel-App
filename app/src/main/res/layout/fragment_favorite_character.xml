@@ -34,30 +34,17 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvEmptyList"
-        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:fontFamily="@font/bangers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tv_empty_text"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:textStyle="italic"
+        android:textSize="25sp"
+        android:textColor="@color/yellow2"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_fav"
-        app:fabSize="normal"
-        android:backgroundTint="@color/red2"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
