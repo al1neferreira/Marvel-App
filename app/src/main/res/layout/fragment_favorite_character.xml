@@ -34,13 +34,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvEmptyList"
+        android:fontFamily="@font/bangers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tv_empty_text"
-        android:gravity="center"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:textColor="@color/yellow2"
-        android:fontFamily="@font/bangers"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
