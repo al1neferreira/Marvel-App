@@ -97,10 +97,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
+                android:id="@+id/btn_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_fav"
+                android:src="@drawable/ic_share"
                 app:fabSize="auto"
                 android:backgroundTint="@color/red2"
                 android:layout_marginBottom="32dp"

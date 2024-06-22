@@ -1,5 +1,6 @@
 package br.com.aline.marvel_app.ui.details
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -12,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.aline.marvel_app.R
+import br.com.aline.marvel_app.data.model.ThumbnailModel
 import br.com.aline.marvel_app.data.model.character.CharacterModel
 import br.com.aline.marvel_app.databinding.FragmentDetailsCharacterBinding
 import br.com.aline.marvel_app.ui.adapters.ComicAdapter
@@ -35,6 +37,7 @@ class DetailsCharacterFragment :
     private val args: DetailsCharacterFragmentArgs by navArgs()
     private val comicAdapter by lazy { ComicAdapter() }
     private lateinit var characterModel: CharacterModel
+    private lateinit var thumbnailModel: ThumbnailModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +55,16 @@ class DetailsCharacterFragment :
         binding.tvDescriptionCharacterDetails.setOnClickListener {
             onShowDialog(characterModel)
         }
+
+        binding.btnShare.setOnClickListener {
+            val shareIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_STREAM, characterModel.thumbnailModel.path)
+                type = "image/jpeg"
+            }
+            startActivity(Intent.createChooser(shareIntent, "Compartilhar imagem do personagem"))
+        }
+
 
     }
 
@@ -78,6 +91,7 @@ class DetailsCharacterFragment :
                         }
                     }
                 }
+
                 is ResourceState.Error -> {
                     binding.progressBarDetail.hide()
                     result.message?.let { message ->
@@ -85,9 +99,11 @@ class DetailsCharacterFragment :
                         toast(message)
                     }
                 }
+
                 is ResourceState.Loading -> {
                     binding.progressBarDetail.show()
                 }
+
                 else -> {}
             }
         }
