@@ -97,11 +97,6 @@ class SearchCharacterFragment :
         viewModel.fetch(query)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(LAST_SEARCH_QUERY,
-            binding.edSearchCharacter.editableText.trim().toString())
-    }
 
     private fun clickAdapter() {
         characterAdapter.setOnClickListener { characterModel ->
