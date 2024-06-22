@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Personagens."
+        android:text="Personagens"
         android:textSize="30sp"
         android:fontFamily="@font/bangers"
         android:textColor="@color/yellow2"

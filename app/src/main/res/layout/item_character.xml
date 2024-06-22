@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="3dp"
+    app:cardCornerRadius="8dp"
     app:cardMaxElevation="2dp"
     android:backgroundTint="@color/yellow2"
     app:strokeColor="@color/black"
@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/imgCharacter"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="195dp"
             android:layout_marginTop="4dp"
             android:contentDescription="@string/app_name"
             android:scaleType="centerCrop"

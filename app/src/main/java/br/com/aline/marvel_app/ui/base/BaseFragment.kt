@@ -14,11 +14,10 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
     protected val binding get() = _binding!!
     protected abstract val viewModel: VM
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         _binding = getViewBinding(inflater, container)
         return binding.root
