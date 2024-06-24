@@ -36,6 +36,8 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
     - Interface com base em modelos de dados;
     - Única fonte de informações;
     - Fonte: https://developer.android.com/topic/architecture?hl=pt-br
+    - 
+    - <img src="app/src/README/clean-arch.png" width="400">
  
 * MVVM:
     - Separação de responsabilidades;
