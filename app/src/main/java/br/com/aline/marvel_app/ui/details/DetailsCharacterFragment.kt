@@ -30,7 +30,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-
 @AndroidEntryPoint
 class DetailsCharacterFragment :
     BaseFragment<FragmentDetailsCharacterBinding, DetailsCharacterFragmentViewModel>() {
