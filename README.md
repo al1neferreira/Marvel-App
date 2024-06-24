@@ -51,7 +51,6 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
 * Retrofit:
   - Biblioteca para se conectar a um serviço REST da Web e receber uma resposta.
   - Fonte: https://square.github.io/retrofit.
-
   - <img src="app/src/README/retrofit.png" width="400">
 
 * Serialization
@@ -92,6 +91,11 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
 * Secrets Gradle Plugin for Android
   - A inclusão de chaves de API ao código-fonte expõe chaves em repositórios públicos, exemplos de código compartilhados e arquivos compartilhados por acidente. Uma alternativa é utilizar o secrets-gradle-plugin para proteger chaves de API no seu projeto.
   - Fonte:https://github.com/google/secrets-gradle-plugin
+ 
+### :pushpin:  TODO
+- Ativar o botão para favoritar nas células.
+- Compartilhar a imagem do personagem.
+- Interface de erro ou sem internet.
 
 
 ## :woman_technologist: Setup
@@ -111,9 +115,6 @@ privateKey="Sua_ chave_privada"
 
 * Faça um rebuild no projeto. 
 * Feito isso, você estará pronto para fazer uma versão do seu projeto 😃.
-
-  
-
 
   
 ## Author
