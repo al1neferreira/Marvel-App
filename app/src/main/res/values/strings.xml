@@ -9,7 +9,7 @@
     <!--    Item character and Item comic -->
     <string name="tx_item_name">Nome:</string>
     <string name="tv_item_description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. . ".</string>
-    <string name="text_description_empty">Esse personagem não possui descrição.</string>
+    <string name="text_description_empty">Este personagem não possui descrição.</string>
     <string name="comics">Detalhes do Personagem</string>
 
     <!--    Details Character Fragment -->

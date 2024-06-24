@@ -98,6 +98,7 @@ dependencies {
     // Glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     ksp ("com.github.bumptech.glide:compiler:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
     //Hilt
     implementation("com.google.dagger:hilt-android:2.48")

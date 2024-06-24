@@ -7,7 +7,6 @@
     android:background="@color/black1"
     android:paddingTop="65dp">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearchCharacter"
         android:layout_width="0dp"
@@ -55,6 +55,20 @@
         app:layout_constraintTop_toBottomOf="@+id/edSearchCharacter"
         tools:listitem="@layout/item_character" />
 
+    <ImageView
+        android:id="@+id/image_search"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:src="@drawable/img_spider_search"
+        android:visibility="gone"
+        android:foregroundGravity="center_vertical"
+        android:layout_marginBottom="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edSearchCharacter" />
+
+
     <ProgressBar
         android:id="@+id/progressbarSearch"
         android:layout_width="wrap_content"
@@ -67,5 +81,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

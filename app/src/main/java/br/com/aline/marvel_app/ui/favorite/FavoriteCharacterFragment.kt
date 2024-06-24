@@ -32,6 +32,7 @@ class FavoriteCharacterFragment:BaseFragment<FragmentFavoriteCharacterBinding, F
         setupRecycleView()
         clickAdapter()
         observer()
+
     }
 
     private fun observer() = lifecycleScope.launch {
@@ -40,11 +41,13 @@ class FavoriteCharacterFragment:BaseFragment<FragmentFavoriteCharacterBinding, F
                 is ResourceState.Success -> {
                     resource.data?.let {
                         binding.tvEmptyList.hide()
+                        binding.imageFavorite.visibility = View.GONE
                         characterAdapter.characters = it.toList()
                     }
                 }
                 is ResourceState.Empty -> {
                     binding.tvEmptyList.show()
+                    binding.imageFavorite.visibility = View.VISIBLE
                 }
                 else -> {
                 }

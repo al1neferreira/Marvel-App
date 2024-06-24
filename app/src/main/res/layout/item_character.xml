@@ -30,12 +30,12 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_share"
+            android:id="@+id/btn_fav_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:backgroundTint="@color/red2"
-            android:src="@drawable/ic_fav"
+            android:src="@drawable/ic_baseline_favorite_heart"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@+id/tvDescriptionCharacter"
             app:layout_constraintEnd_toEndOf="parent"

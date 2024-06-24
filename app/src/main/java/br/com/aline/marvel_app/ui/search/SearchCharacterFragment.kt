@@ -36,9 +36,13 @@ class SearchCharacterFragment :
         setupRecyclerView()
         clickAdapter()
 
+        binding.imageSearch.visibility = View.VISIBLE
+
         val query = savedInstanceState?.getString(LAST_SEARCH_QUERY) ?: DEFAULT_QUERY
         searchInit(query)
         collectObserver()
+
+
     }
 
     private fun collectObserver() = lifecycleScope.launch {
@@ -46,20 +50,27 @@ class SearchCharacterFragment :
             when (result) {
                 is ResourceState.Success -> {
                     binding.progressbarSearch.hide()
+                    binding.imageSearch.visibility = View.GONE
                     result.data?.let {
                         characterAdapter.characters = it.data.results.toList()
+                        binding.imageSearch.visibility = View.GONE
                     }
                 }
+
                 is ResourceState.Error -> {
                     binding.progressbarSearch.hide()
+                    binding.imageSearch.visibility = View.GONE
                     result.message?.let { message ->
                         Timber.tag("SearchCharacterFragment").e("Error -> ${message}")
                         toast(getString(R.string.an_error_occurred))
                     }
                 }
+
                 is ResourceState.Loading -> {
                     binding.progressbarSearch.show()
+                    binding.imageSearch.visibility = View.GONE
                 }
+
                 else -> {}
             }
         }
@@ -70,6 +81,7 @@ class SearchCharacterFragment :
         edSearchCharacter.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_GO) {
                 updateCharacterList()
+                binding.imageSearch.visibility = View.GONE
                 true
             } else {
                 false
@@ -78,6 +90,7 @@ class SearchCharacterFragment :
         edSearchCharacter.setOnKeyListener { _, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 updateCharacterList()
+                binding.imageSearch.visibility = View.GONE
                 true
             } else {
                 false
@@ -89,12 +102,14 @@ class SearchCharacterFragment :
         edSearchCharacter.editableText.trim().let {
             if (it.isNotEmpty()) {
                 searchQuery(it.toString())
+                binding.imageSearch.visibility = View.GONE
             }
         }
     }
 
     private fun searchQuery(query: String) {
         viewModel.fetch(query)
+        binding.imageSearch.visibility = View.GONE
     }
 
 
@@ -102,6 +117,7 @@ class SearchCharacterFragment :
         characterAdapter.setOnClickListener { characterModel ->
             val action = SearchCharacterFragmentDirections
                 .actionSearchCharacterFragmentToDetailsCharacterFragment(characterModel)
+            binding.imageSearch.visibility = View.GONE
             findNavController().navigate(action)
         }
     }
@@ -110,6 +126,7 @@ class SearchCharacterFragment :
         rvSearchCharacter.apply {
             adapter = characterAdapter
             layoutManager = LinearLayoutManager(context)
+            binding.imageSearch.visibility = View.GONE
         }
     }
 

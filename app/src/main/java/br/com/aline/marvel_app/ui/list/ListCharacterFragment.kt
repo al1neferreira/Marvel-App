@@ -9,7 +9,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.aline.marvel_app.R
+import br.com.aline.marvel_app.data.model.character.CharacterModel
 import br.com.aline.marvel_app.databinding.FragmentListCharacterBinding
+import br.com.aline.marvel_app.databinding.ItemCharacterBinding
 import br.com.aline.marvel_app.ui.adapters.CharacterAdapter
 import br.com.aline.marvel_app.ui.base.BaseFragment
 import br.com.aline.marvel_app.ui.state.ResourceState
@@ -47,6 +49,7 @@ class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCha
                     binding.progressCircular.hide()
                     resource.message?.let { message ->
                         toast(getString(R.string.an_error_occurred))
+                        binding.itemCharactersError
                         Timber.tag("ListCharacterFragment").e("Error -> $message")
                     }
                 }

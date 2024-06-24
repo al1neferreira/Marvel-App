@@ -2,6 +2,7 @@ package br.com.aline.marvel_app.ui.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.aline.marvel_app.data.model.character.CharacterModel
 import br.com.aline.marvel_app.data.model.character.CharacterModelResponse
 import br.com.aline.marvel_app.repository.MarvelRepository
 import br.com.aline.marvel_app.ui.state.ResourceState
@@ -51,5 +52,9 @@ class ListCharacterViewModel @Inject constructor(
             }
         }
         return ResourceState.Error("${response.code()} ${response.message()}")
+    }
+
+    fun insert(characterModel: CharacterModel) = viewModelScope.launch {
+        repository.insert(characterModel)
     }
 }

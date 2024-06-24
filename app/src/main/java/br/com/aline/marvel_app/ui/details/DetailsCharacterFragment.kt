@@ -1,13 +1,17 @@
 package br.com.aline.marvel_app.ui.details
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
@@ -16,6 +20,7 @@ import br.com.aline.marvel_app.R
 import br.com.aline.marvel_app.data.model.ThumbnailModel
 import br.com.aline.marvel_app.data.model.character.CharacterModel
 import br.com.aline.marvel_app.databinding.FragmentDetailsCharacterBinding
+import br.com.aline.marvel_app.databinding.ItemCharacterBinding
 import br.com.aline.marvel_app.ui.adapters.ComicAdapter
 import br.com.aline.marvel_app.ui.base.BaseFragment
 import br.com.aline.marvel_app.ui.state.ResourceState
@@ -24,10 +29,13 @@ import br.com.aline.marvel_app.util.limitDescription
 import br.com.aline.marvel_app.util.show
 import br.com.aline.marvel_app.util.toast
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
+
 
 @AndroidEntryPoint
 class DetailsCharacterFragment :
@@ -38,7 +46,7 @@ class DetailsCharacterFragment :
     private val comicAdapter by lazy { ComicAdapter() }
     private lateinit var characterModel: CharacterModel
     private lateinit var thumbnailModel: ThumbnailModel
-
+    private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
@@ -52,21 +60,48 @@ class DetailsCharacterFragment :
         setupRecyclerView()
         onLoadCharacter(characterModel)
         collectObserver()
+        //imageToBitmap(characterModel)
+
+
         binding.tvDescriptionCharacterDetails.setOnClickListener {
             onShowDialog(characterModel)
         }
 
         binding.btnShare.setOnClickListener {
+
             val shareIntent: Intent = Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_STREAM, characterModel.thumbnailModel.path)
-                type = "image/jpeg"
+                type = "application/xml"
             }
             startActivity(Intent.createChooser(shareIntent, "Compartilhar imagem do personagem"))
         }
 
 
+        /* val url: String = characterModel.thumbnailModel.path
+
+         Glide.with(this)
+             .asBitmap()
+             .load(url)
+             .into(object : CustomTarget<Bitmap?>(){
+                 override fun onResourceReady(
+                     resource: Bitmap,
+                     transition: Transition<in Bitmap?>?
+                 ) {
+                     imageView.setImageBitmap(resource)
+                 }
+
+                 override fun onLoadCleared(placeholder: Drawable?) {
+                     TODO("Not yet implemented")
+                 }
+             })
+
+
+         */
+
+
     }
+
 
     private fun onShowDialog(characterModel: CharacterModel) {
         MaterialAlertDialogBuilder(requireContext())
@@ -110,6 +145,7 @@ class DetailsCharacterFragment :
 
     }
 
+
     private fun onLoadCharacter(characterModel: CharacterModel) = with(binding) {
         tvNameCharacterDetails.text = characterModel.name
         if (characterModel.description.isEmpty()) {
@@ -121,8 +157,18 @@ class DetailsCharacterFragment :
         Glide.with(requireContext())
             .load(characterModel.thumbnailModel.path + "." + characterModel.thumbnailModel.extension)
             .into(imgCharacterDetails)
-
     }
+
+    /*private fun imageToBitmap(characterModel: CharacterModel) {
+        Glide.with(this)
+            .asBitmap()
+            .load(characterModel.thumbnailModel.path)
+            .submit()
+            .get()
+    }
+
+     */
+
 
     private fun setupRecyclerView() = with(binding) {
         rvComics.apply {

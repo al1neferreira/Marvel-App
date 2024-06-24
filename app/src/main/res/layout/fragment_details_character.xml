@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_share"
-                app:fabSize="auto"
+                app:fabSize="mini"
                 android:backgroundTint="@color/red2"
                 android:layout_marginBottom="32dp"
                 android:layout_marginEnd="32dp"

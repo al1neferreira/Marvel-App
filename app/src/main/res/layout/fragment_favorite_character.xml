@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <TextView
+        android:id="@+id/tv_favoritos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -34,17 +35,29 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvEmptyList"
-        android:fontFamily="@font/bangers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
         android:text="@string/tv_empty_text"
-        android:textSize="25sp"
         android:textColor="@color/yellow2"
+        android:textSize="35sp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_favorite"/>
+
+    <ImageView
+        android:id="@+id/image_favorite"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:foregroundGravity="center_vertical"
+        android:src="@drawable/ic_america_favorite"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_favoritos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
