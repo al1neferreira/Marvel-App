@@ -11,7 +11,6 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
 <img src="app/src/gifs/start-and_detail.gif" width="250">&emsp;<img src="app/src/gifs/save_unsave.gif" width="250">&emsp;<img src="app/src/gifs/search2.gif" width="250">
 
 
-
 ## :hammer_and_wrench: Tecnologias utilizadas
 * Kotlin
 * Clean Architecture
@@ -82,12 +81,36 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
   - É uma biblioteca de suporte que permite vincular componentes de interface nos seus layouts a fontes de dados no app usando um formato declarativo em vez de programaticamente.
   - Fonte:https://developer.android.com/topic/libraries/data-binding?hl=pt-br
  
-* Navigation
-  - O componente Navigation processa diversos casos de uso de navegação, desde cliques simples em botões até padrões mais complexos, como barras de apps e a gaveta de navegação.
-  - Fonte:  https://developer.android.com/guide/navigation?hl=pt-br
-   
-  
+* Glide 
+  - É uma estrutura de gerenciamento de mídia e carregamento de imagens de código aberto rápida e eficiente para Android que envolve decodificação de mídia, cache de memória e disco e pool de recursos em uma interface simples e fácil de usar.
+  - Fonte:https://github.com/bumptech/glide
+
+* Timber 
+  - Um logger com uma API pequena e extensível que fornece utilidade além da Logclasse normal do Android.
+  - Fonte:https://github.com/JakeWharton/timber
  
+* Secrets Gradle Plugin for Android
+  - A inclusão de chaves de API ao código-fonte expõe chaves em repositórios públicos, exemplos de código compartilhados e arquivos compartilhados por acidente. Uma alternativa é utilizar o secrets-gradle-plugin para proteger chaves de API no seu projeto.
+  - Fonte:https://github.com/google/secrets-gradle-plugin
+
+
+## :woman_technologist: Setup
+* Faça o fork e o clone do projeto
+* Gere sua Api Key (https://developer.marvel.com/documentation/getting_started)
+
+* De acordo com a documentação, você vai precisar utilizar os seguintes parâmetros:
+   - Timestamp,;
+   - ApiKey (Your Public Key);
+   - e Hash.
+   - Fonte: https://developer.marvel.com/documentation/authorization. 
+
+ ```
+publicKey="Sua_chave_publica"
+privateKey="Sua_ chave_privada"
+```
+
+* Faça um rebuild no projeto. 
+* Feito isso, você estará pronto para fazer uma versão do seu projeto 😃.
 
   
 
