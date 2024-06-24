@@ -3,10 +3,12 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
 
 ## :camera_flash: Screenshots
 
-<img src="app/src/screens/launch_app.png" width="250">&emsp;<img src="app/src/screens/home_list_screen.png" width="250">&emsp;<img src="app/src/screens/detail_character_screen.png" width="250">&emsp;<img src="app/src/screens/fav_empty_screen.png" width="250">&emsp;&emsp;<img src="app/src/screens/search_empty_screen.png" width="250">&emsp;<img src="app/src/screens/search_result_screen.png" width="250">
+<img src="app/src/screens/launch_app.png" width="250">&emsp;<img src="app/src/screens/home_list_screen.png" width="250">&emsp;<img src="app/src/screens/detail_character_screen.png" width="250">&emsp;
+
+<img src="app/src/screens/fav_empty_screen.png" width="250">&emsp;<img src="app/src/screens/search_empty_screen.png" width="250">&emsp;<img src="app/src/screens/search_result_screen.png" width="250">
 
 ## :movie_camera: Video
-<img src="app/src/screens/gif/task1-video.gif" width="250">&emsp;<img src="app/src/screens/gif/update.gif" width="250">&emsp;<img src="app/src/screens/gif/delete.gif" width="250">
+<img src="app/src/gifs/start-and_detail.gif" width="250">&emsp;<img src="app/src/gifs/save_unsave.gif" width="250">&emsp;<img src="app/src/gifs/search2.gif" width="250">
 
 
 
