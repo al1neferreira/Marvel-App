@@ -52,7 +52,34 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
 
 * Serialization
   - Analisa a resposta JSON em um objeto de dado
-  - Fonte: https://kotlinlang.org/docs/serialization.html#0 
+  - Fonte: https://kotlinlang.org/docs/serialization.html#0
+
+
+* Dagger Hilt
+  - Biblioteca de injeção de dependência para Android que reduz a injeção manual de código boilerplate no projeto, oferecendo contêineres para cada classe do Android e gerenciando os ciclos de vida de cada uma automaticamente. 
+  - Fonte: ttps://developer.android.com/training/dependency-injection/hilt-android?hl=pt-br
+ 
+
+* Coroutines
+  - Padrão de projeto de simultaneidade para simplificar o código que é executado de forma assíncrona. As corrotinas ajudam a gerenciar tarefas de longa duração que podem bloquear a linha de execução principal e fazer com que seu app pare de responder.
+  - Fonte: https://developer.android.com/kotlin/coroutines?hl=pt-br
+ 
+
+* Flow 
+  - Em corrotinas, um fluxo é um tipo que pode emitir vários valores sequencialmente. Conceitualmente, um fluxo é um stream de dados que pode ser computado de forma assíncrona.
+  - Fonte:https://developer.android.com/kotlin/flow?hl=pt-br
+
+* StateFlow
+  - É um fluxo observável detentor de estado que emite as atualizações de estado novas e atuais para os coletores. No Android, StateFlow é uma ótima opção para classes que precisam manter um estado mutável observável.
+  - Fonte: https://developer.android.com/kotlin/flow/stateflow-and-sharedflow?hl=pt-br
+ 
+* Data Binding(ViewBinding)
+  - É uma biblioteca de suporte que permite vincular componentes de interface nos seus layouts a fontes de dados no app usando um formato declarativo em vez de programaticamente.
+  - Fonte:https://developer.android.com/topic/libraries/data-binding?hl=pt-br
+ 
+* Navigation
+  - O componente Navigation processa diversos casos de uso de navegação, desde cliques simples em botões até padrões mais complexos, como barras de apps e a gaveta de navegação.
+  - Fonte:  https://developer.android.com/guide/navigation?hl=pt-br
    
   
  
