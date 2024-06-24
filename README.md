@@ -44,6 +44,11 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
     - Testabilidade.
   <img src="app/src/README/mvvm.png" width="500">
 
+* Room Database
+    - A biblioteca de persistência Room oferece uma camada de abstração sobre o SQLite para permitir acesso fluente ao banco de dados, aproveitando toda a capacidade do SQLite.A persistência de dados local pode ser muito útil para apps que processam quantidades não triviais de dados estruturados. O caso de uso mais comum é armazenar em cache partes importantes de dados para que, quando o dispositivo não puder acessar a rede, o usuário ainda consiga ter acesso a esse conteúdo off-line.
+    - 
+    -  <img src="app/src/README/room_architecture.png" width="300">
+
 * Retrofit:
   - Biblioteca para se conectar a um serviço REST da Web e receber uma resposta.
   - Fonte: https://square.github.io/retrofit.
