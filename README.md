@@ -25,7 +25,7 @@ Aplicativo android nativo que traz uma lista de personagens da Marvel e permite 
 * Room Database
 * Jetpack Components(ViewBinding, Navigation Components)
 
-## Conceitos
+## :bookmark_tabs: Conceitos
 
 * Kotlin:
     - Linguagem de programação moderna e estaticamente tipada com suporte total ao desenvolvimento para Android.
