@@ -1,10 +1,7 @@
 package br.com.aline.marvel_app.ui.details
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -20,7 +17,6 @@ import br.com.aline.marvel_app.R
 import br.com.aline.marvel_app.data.model.ThumbnailModel
 import br.com.aline.marvel_app.data.model.character.CharacterModel
 import br.com.aline.marvel_app.databinding.FragmentDetailsCharacterBinding
-import br.com.aline.marvel_app.databinding.ItemCharacterBinding
 import br.com.aline.marvel_app.ui.adapters.ComicAdapter
 import br.com.aline.marvel_app.ui.base.BaseFragment
 import br.com.aline.marvel_app.ui.state.ResourceState
@@ -29,8 +25,6 @@ import br.com.aline.marvel_app.util.limitDescription
 import br.com.aline.marvel_app.util.show
 import br.com.aline.marvel_app.util.toast
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.transition.Transition
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -60,12 +54,8 @@ class DetailsCharacterFragment :
         setupRecyclerView()
         onLoadCharacter(characterModel)
         collectObserver()
+        descriptionCharacter()
         //imageToBitmap(characterModel)
-
-
-        binding.tvDescriptionCharacterDetails.setOnClickListener {
-            onShowDialog(characterModel)
-        }
 
         binding.btnShare.setOnClickListener {
 
@@ -76,7 +66,6 @@ class DetailsCharacterFragment :
             }
             startActivity(Intent.createChooser(shareIntent, "Compartilhar imagem do personagem"))
         }
-
 
         /* val url: String = characterModel.thumbnailModel.path
 
@@ -96,12 +85,15 @@ class DetailsCharacterFragment :
                  }
              })
 
-
          */
-
 
     }
 
+    private fun descriptionCharacter(){
+        binding.tvDescriptionCharacterDetails.setOnClickListener {
+            onShowDialog(characterModel)
+        }
+    }
 
     private fun onShowDialog(characterModel: CharacterModel) {
         MaterialAlertDialogBuilder(requireContext())

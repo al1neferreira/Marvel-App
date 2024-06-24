@@ -1,4 +1,4 @@
-package br.com.aline.marvel_app
+package br.com.aline.marvel_app.ui.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import br.com.aline.marvel_app.R
 import br.com.aline.marvel_app.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
