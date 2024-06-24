@@ -56,7 +56,6 @@ class DetailsCharacterFragment :
         collectObserver()
         descriptionCharacter()
         savetoFavorite()
-        //imageToBitmap(characterModel)
 
         binding.btnShare.setOnClickListener {
 
@@ -67,30 +66,6 @@ class DetailsCharacterFragment :
             }
             startActivity(Intent.createChooser(shareIntent, "Compartilhar imagem do personagem"))
         }
-
-
-
-
-        /* val url: String = characterModel.thumbnailModel.path
-
-         Glide.with(this)
-             .asBitmap()
-             .load(url)
-             .into(object : CustomTarget<Bitmap?>(){
-                 override fun onResourceReady(
-                     resource: Bitmap,
-                     transition: Transition<in Bitmap?>?
-                 ) {
-                     imageView.setImageBitmap(resource)
-                 }
-
-                 override fun onLoadCleared(placeholder: Drawable?) {
-                     TODO("Not yet implemented")
-                 }
-             })
-
-
-         */
 
     }
 
