@@ -55,6 +55,7 @@ class DetailsCharacterFragment :
         onLoadCharacter(characterModel)
         collectObserver()
         descriptionCharacter()
+        savetoFavorite()
         //imageToBitmap(characterModel)
 
         binding.btnShare.setOnClickListener {
@@ -66,6 +67,9 @@ class DetailsCharacterFragment :
             }
             startActivity(Intent.createChooser(shareIntent, "Compartilhar imagem do personagem"))
         }
+
+
+
 
         /* val url: String = characterModel.thumbnailModel.path
 
@@ -85,8 +89,16 @@ class DetailsCharacterFragment :
                  }
              })
 
+
          */
 
+    }
+
+    private fun savetoFavorite(){
+        binding.btnFavoriteDetail.setOnClickListener{
+            viewModel.insert(characterModel)
+            toast(getString(R.string.saved_successfully))
+        }
     }
 
     private fun descriptionCharacter(){

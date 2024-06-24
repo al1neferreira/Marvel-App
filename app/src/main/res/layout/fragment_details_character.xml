@@ -13,9 +13,9 @@
         android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="85dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp">
 
             <ImageView
                 android:id="@+id/imgCharacterDetails"
@@ -29,15 +29,29 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_favorite_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="339dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="@color/red2"
+                android:src="@drawable/ic_baseline_favorite_heart"
+                app:fabSize="mini"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvNameCharacterDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/bangers"
                 android:text="@string/tx_item_name"
                 android:textColor="@color/yellow2"
-                android:fontFamily="@font/bangers"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/imgCharacterDetails"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,11 +62,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginEnd="8dp"
-                android:textColor="@color/white"
+                android:layout_marginBottom="20dp"
                 android:text="@string/tv_item_description"
                 android:textAlignment="inherit"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvNameCharacterDetails"
@@ -63,10 +77,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
-                android:text="@string/comics"
-                android:textColor="@color/yellow2"
-                android:textAlignment="inherit"
                 android:fontFamily="@font/bangers"
+                android:text="@string/comics"
+                android:textAlignment="inherit"
+                android:textColor="@color/yellow2"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/imgCharacterDetails"
                 app:layout_constraintTop_toBottomOf="@+id/imgCharacterDetails" />
@@ -77,12 +91,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:scrollbars="vertical"
-                app:layout_constraintBottom_toTopOf="@id/rvComics"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/rvComics"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.0"
                 tools:listitem="@layout/item_comic" />
 
             <ProgressBar
@@ -100,13 +115,18 @@
                 android:id="@+id/btn_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="339dp"
+                android:layout_marginTop="548dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="120dp"
+                android:backgroundTint="@color/red2"
                 android:src="@drawable/ic_share"
                 app:fabSize="mini"
-                android:backgroundTint="@color/red2"
-                android:layout_marginBottom="32dp"
-                android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

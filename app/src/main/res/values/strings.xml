@@ -34,5 +34,6 @@
 
     <!--    Toast messages -->
     <string name="an_error_occurred">Um erro ocorreu!</string>
-    <string name="saved_successfully">Salvo com sucesso!</string>
+    <string name="an_empty_result">Nenhum resultado encontrado!</string>
+    <string name="saved_successfully">Personagem salvo com sucesso!</string>
 </resources>

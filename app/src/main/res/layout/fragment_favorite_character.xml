@@ -16,13 +16,13 @@
         android:text="Favoritos."
         android:textColor="@color/yellow2"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavoriteCharacter"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:paddingVertical="12dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
