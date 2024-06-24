@@ -16,7 +16,8 @@
         android:text="Favoritos."
         android:textColor="@color/yellow2"
         android:textSize="30sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavoriteCharacter"
